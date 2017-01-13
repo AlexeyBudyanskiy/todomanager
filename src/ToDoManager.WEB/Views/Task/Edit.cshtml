@@ -25,7 +25,7 @@
                     @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "validate", maxlength = "50", minlength = "3", pattern = "^\\S.*$", required = "required" } })
                     @Html.ValidationMessageFor(model => model.Text, "", new { @class = "red-text" })
                     
-                    <div class="input-field col s12">
+                    <div class="input-field">
                         <select name ="Status" required="required">
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">To Do</option>

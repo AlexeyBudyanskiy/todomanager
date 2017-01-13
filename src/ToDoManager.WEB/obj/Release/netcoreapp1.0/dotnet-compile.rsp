@@ -1,12 +1,12 @@
---temp-output:D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Debug\netcoreapp1.0\
---out:D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\bin\Debug\netcoreapp1.0\ToDoManager.WEB.dll
---define:DEBUG
+--temp-output:D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Release\netcoreapp1.0\
+--out:D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\bin\Release\netcoreapp1.0\ToDoManager.WEB.dll
+--define:RELEASE
 --define:TRACE
 --define:NETCOREAPP1_0
 --suppress-warning:CS1701
 --suppress-warning:CS1702
 --suppress-warning:CS1705
---optimize:False
+--optimize:True
 --emit-entry-point:True
 --output-name:ToDoManager.WEB
 --file-version:1.0.0.0
@@ -207,7 +207,7 @@
 --reference:C:\Users\Oleksii_Budianskyi\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Oleksii_Budianskyi\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Oleksii_Budianskyi\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Debug\netcoreapp1.0\ToDoManager.WEBdotnet-compile.deps.json",ToDoManager.WEB.deps.json
+--resource:"D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Release\netcoreapp1.0\ToDoManager.WEBdotnet-compile.deps.json",ToDoManager.WEB.deps.json
 D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\Program.cs
 D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\Startup.cs
 D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\ApiControllers\ApiTaskController.cs

@@ -31,7 +31,6 @@
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-          "ToDoManager.DAL": "1.0.0",
           "Microsoft.EntityFrameworkCore": "1.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
           "Microsoft.EntityFrameworkCore.Design": "1.0.0-preview2-final"
@@ -2842,16 +2841,6 @@
           "System.Xml.XDocument": "4.3.0",
           "System.Xml.XPath": "4.0.1"
         }
-      },
-      "ToDoManager.DAL/1.0.0": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "1.1.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
-          "NETStandard.Library": "1.6.1"
-        },
-        "compile": {
-          "ToDoManager.DAL.dll": {}
-        }
       }
     },
     ".NETCoreApp,Version=v1.0/": {
@@ -2872,7 +2861,6 @@
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-          "ToDoManager.DAL": "1.0.0",
           "Microsoft.EntityFrameworkCore": "1.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
           "Microsoft.EntityFrameworkCore.Design": "1.0.0-preview2-final"
@@ -5584,16 +5572,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
-      },
-      "ToDoManager.DAL/1.0.0": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "1.1.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
-          "NETStandard.Library": "1.6.1"
-        },
-        "runtime": {
-          "ToDoManager.DAL.dll": {}
-        }
       }
     }
   },
@@ -6702,11 +6680,6 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-FLhdYJx4331oGovQypQ8JIw2kEmNzCsjVOVYY/16kZTUoquZG85oVn7yUhBE2OZt1yGPSXAL0HTEfzjlbNpM7Q=="
-    },
-    "ToDoManager.DAL/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

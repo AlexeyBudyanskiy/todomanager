@@ -1,14 +1,15 @@
-﻿-d:DEBUG
+﻿-d:RELEASE
 -d:TRACE
 -d:NETCOREAPP1_0
 -nowarn:CS1701
 -nowarn:CS1702
 -nowarn:CS1705
+-optimize
 -debug:full
 -nostdlib
 -nologo
-"D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\bin\Debug\netcoreapp1.0\ToDoManager.WEB.dll"
+"D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Release\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\bin\Release\netcoreapp1.0\ToDoManager.WEB.dll"
 -r:"C:\Users\Oleksii_Budianskyi\.nuget\packages\Microsoft.ApplicationInsights\2.1.0\lib\dotnet5.4\Microsoft.ApplicationInsights.dll"
 -r:"C:\Users\Oleksii_Budianskyi\.nuget\packages\Microsoft.ApplicationInsights.AspNetCore\1.0.0\lib\netstandard1.6\Microsoft.ApplicationInsights.AspNetCore.dll"
 -r:"C:\Users\Oleksii_Budianskyi\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.1\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll"
@@ -203,7 +204,7 @@
 -r:"C:\Users\Oleksii_Budianskyi\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\Oleksii_Budianskyi\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\Oleksii_Budianskyi\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll"
--resource:"D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Debug\netcoreapp1.0\ToDoManager.WEBdotnet-compile.deps.json",ToDoManager.WEB.deps.json
+-resource:"D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Release\netcoreapp1.0\ToDoManager.WEBdotnet-compile.deps.json",ToDoManager.WEB.deps.json
 "D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\Program.cs"
 "D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\Startup.cs"
 "D:\CORE\ToDoManager.WEB\src\ToDoManager.WEB\ApiControllers\ApiTaskController.cs"

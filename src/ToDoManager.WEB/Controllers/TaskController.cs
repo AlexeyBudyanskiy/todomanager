@@ -1,4 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Mvc;
 using ToDoManager.WEB.DataAccess.Entities;
 using ToDoManager.WEB.DataAccess.Enums;
@@ -19,6 +23,21 @@ namespace ToDoManager.WEB.Controllers
         public IActionResult Index()
         {
             var tasks = _unitOfWork.Assignments.GetAll().ToList();
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("10.23.22.103/todolist/api/cards");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                // New code:
+                var response = client.GetAsync("");
+                if (response.IsSuccessStatusCode)
+                {
+                    var contentString = await response.Content.ReadAsStringAsync();
+                    return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Card>>(contentString);
+                }
+            }
 
             return View(tasks);
         }
