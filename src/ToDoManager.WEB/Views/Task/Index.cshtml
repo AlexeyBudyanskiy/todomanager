@@ -1,0 +1,77 @@
+﻿@using ToDoManager.WEB.DataAccess.Entities
+@using ToDoManager.WEB.DataAccess.Enums
+@model IEnumerable<Assignment>
+
+<div class="row">    
+    <div class="col l4 m4 s12">
+        <h2 class="center grey-text">To Do</h2>
+        <div class="center">
+            <a class="btn-floating btn-large waves-effect waves-light center" href="@Url.RouteUrl(new {controller = "Task", action = "Add"})"><i class="material-icons">add</i></a>
+        </div>
+        @foreach (var task in Model.Where(x => x.Status == AssignmentStatus.Planned))
+        {
+            <div class="row">
+                <div class="col s12">
+                    <div class="card red darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">@task.Name</span>
+                            <p>
+                                @task.Text
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="@Url.RouteUrl(new {controller = "Task", action = "ChangeStatus", taskid = task.Id, status = AssignmentStatus.InProgress})">Start</a>
+                            <a href="@Url.RouteUrl(new {controller = "Task", action = "Edit", taskid = task.Id})">Edit</a>
+                            <a href="@Url.RouteUrl(new {controller = "Task", action = "Remove", taskid = task.Id})">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col l4 m4 s12">
+        <h2 class="center grey-text">In Progress</h2>&nbsp;
+        @foreach (var task in Model.Where(x => x.Status == AssignmentStatus.InProgress))
+        {
+            <div class="row">
+                <div class="col s12">
+                    <div class="card yellow darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">@task.Name</span>
+                            <p>
+                                @task.Text
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="@Url.RouteUrl(new {controller = "Task", action = "ChangeStatus", taskid = task.Id, status = AssignmentStatus.Done})">Done</a>
+                            <a href="@Url.RouteUrl(new {controller = "Task", action = "Edit", taskid = task.Id})">Edit</a>
+                            <a href="@Url.RouteUrl(new {controller = "Task", action = "Remove", taskid = task.Id})">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col l4 m4 s12">
+        <h2 class="center grey-text">Done</h2>
+        @foreach (var task in Model.Where(x => x.Status == AssignmentStatus.Done))
+        {
+            <div class="row">
+                <div class="col s12">
+                    <div class="card green darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">@task.Name</span>
+                            <p>
+                                @task.Text
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="@Url.RouteUrl(new {controller = "Task", action = "Edit", taskid = task.Id})">Edit</a>
+                            <a href="@Url.RouteUrl(new {controller = "Task", action = "Remove", taskid = task.Id})">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

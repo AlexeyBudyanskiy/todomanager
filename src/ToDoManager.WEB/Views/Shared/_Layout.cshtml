@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Simple ToDo manager">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>VanHool</title>
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="~/css/site.css">
+
+    <!-- Page scripts -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    @RenderSection("scripts", required: false)
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper white">
+                <a href="@Url.RouteUrl(new {controller = "Task", action = "Index"})" class="brand-logo">
+                    <span class="grey-text">ToDo Manager</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="page-footer white">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="footer-text">ToDo Manager</h5>
+                    <p class="footer-text">Simple ToDo manager</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="footer-text">Links</h5>
+                    <ul>
+                        <li><a class="footer-text" href="@Url.RouteUrl(new {controller = "Task", action = "Index"})">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container grey-text text-darken-1">
+                © 2016 Alexey Budyanskiy. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
