@@ -34,11 +34,11 @@ namespace ToDoManager.WEB
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<ManagerContext>(options =>
-                options.UseSqlServer(connection));
+            //string connection = Configuration.GetConnectionString("DefaultConnection");
+            //services.AddDbContext<ManagerContext>(options =>
+            //    options.UseSqlServer(connection));
             
-            services.AddSingleton<IUnitOfWork>(provider => new UnitOfWork(connection));
+            //services.AddSingleton<IUnitOfWork>(provider => new UnitOfWork(connection));
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddMvc();
         }
@@ -73,7 +73,7 @@ namespace ToDoManager.WEB
             });
             
 
-            Initializer.Initialize(app.ApplicationServices);
+            //Initializer.Initialize(app.ApplicationServices);
         }
     }
 }

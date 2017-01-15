@@ -1,45 +1,91 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ToDoManager.WEB.DataAccess.Entities;
 using ToDoManager.WEB.DataAccess.Enums;
 using ToDoManager.WEB.DataAccess.Interfaces;
+using ToDoManager.WEB.Infrastructure;
 
 namespace ToDoManager.WEB.Controllers
 {
     public class TaskController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private const string AssignmentsUrl = "http://managerreturner.azurewebsites.net/api/values";
 
-        public TaskController(IUnitOfWork uow)
+        private readonly IUnitOfWork _unitOfWork;
+        
+
+        //public TaskController(IUnitOfWork uow)
+        //{
+        //    _unitOfWork = uow;
+        //}
+
+        public TaskController()
         {
-            _unitOfWork = uow;
+            
         }
+
+        //[HttpGet]
+        //public IActionResult Index()
+        //{
+        //    //var tasks = _unitOfWork.Assignments.GetAll().ToList();
+        //    var tasks = GetTasks();
+        //    tasks.AddRange(MakeRequest());
+            
+        //    return View(tasks);
+        //}
 
         [HttpGet]
         public IActionResult Index()
         {
-            var tasks = _unitOfWork.Assignments.GetAll().ToList();
-
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("10.23.22.103/todolist/api/cards");
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                // New code:
-                var response = client.GetAsync("");
-                if (response.IsSuccessStatusCode)
-                {
-                    var contentString = await response.Content.ReadAsStringAsync();
-                    return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Card>>(contentString);
-                }
-            }
+            var tasks = RequestBuilder.GetAssignmentsPolly(AssignmentsUrl);
+            tasks.AddRange(GetTasks());
 
             return View(tasks);
+        }
+
+        private List<Assignment> MakeRequest()
+        {
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var responseMsg = client.GetAsync("http://managerreturner.azurewebsites.net/api/values").Result;
+            if (responseMsg.IsSuccessStatusCode)
+            {
+                var res = JsonConvert.DeserializeObject<List<Assignment>>(responseMsg.Content.ReadAsStringAsync().Result);
+                return res;
+            }
+            else
+            {
+                return MakeRequest();
+            }
+        }
+
+        private List<Assignment> GetTasks()
+        {
+            var assignments = new List<Assignment>
+            {
+                new Assignment
+                {
+                    Name = "Make Gamestore",
+                    Text = "To make game store with the ability to buy games.",
+                    Status = AssignmentStatus.Planned
+                },
+                new Assignment
+                {
+                    Name = "English",
+                    Text = "Go to the English",
+                    Status = AssignmentStatus.Done
+                },
+                new Assignment
+                {
+                    Name = "Drink Cofee",
+                    Text = "To drink some cofee",
+                    Status = AssignmentStatus.InProgress
+                }
+            };
+            return assignments;
         }
 
         [HttpGet]
@@ -119,4 +165,6 @@ namespace ToDoManager.WEB.Controllers
             updatingAssignment.Text = assignment.Text;
         }
     }
+
+    
 }

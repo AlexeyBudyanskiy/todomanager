@@ -1,0 +1,9 @@
+D:\Prgramming\CORE\ToDoManager.WEB\src\ToDoManager.WEB\bin\Debug\netcoreapp1.1\ToDoManager.WEB.deps.json
+D:\Prgramming\CORE\ToDoManager.WEB\src\ToDoManager.WEB\bin\Debug\netcoreapp1.1\ToDoManager.WEB.dll
+D:\Prgramming\CORE\ToDoManager.WEB\src\ToDoManager.WEB\bin\Debug\netcoreapp1.1\ToDoManager.WEB.pdb
+D:\Prgramming\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Debug\netcoreapp1.1\ToDoManager.WEB.csprojResolveAssemblyReference.cache
+D:\Prgramming\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Debug\netcoreapp1.1\ToDoManager.WEB.AssemblyInfo.cs
+D:\Prgramming\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Debug\netcoreapp1.1\ToDoManager.WEB.dll
+D:\Prgramming\CORE\ToDoManager.WEB\src\ToDoManager.WEB\obj\Debug\netcoreapp1.1\ToDoManager.WEB.pdb
+D:\Prgramming\CORE\ToDoManager.WEB\src\ToDoManager.WEB\bin\Debug\netcoreapp1.1\ToDoManager.WEB.runtimeconfig.json
+D:\Prgramming\CORE\ToDoManager.WEB\src\ToDoManager.WEB\bin\Debug\netcoreapp1.1\ToDoManager.WEB.runtimeconfig.dev.json
